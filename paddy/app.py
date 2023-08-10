@@ -8,9 +8,10 @@ def index():
 
 @app.route("/sightings", methods=["POST", "GET"])
 def sightings():
-    if request.method == "POST":
+    if request.method == "GET":
         return render_template("/sightings.html")
     else:
-        map_location = request.form.get("map_location")
-        current_location = request.form.get("current_location")
-    
+        latitude = request.form.get("lat")
+        longitude = request.form.get("lng")
+        latnlng = {1: latitude, 2: longitude}
+        return  latnlng

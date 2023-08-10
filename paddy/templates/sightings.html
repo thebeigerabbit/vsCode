@@ -2,20 +2,30 @@
 
 {% block content %}
 <script src="/static/paddy_sightings.js"></script>
-<div id="row1">
-    <form name="location" method="post">
-        <button class="mb-xl-3" id="current_location" name="current_location">
-            Use Current Location
-        </button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<form id="current_location" method="post">
+    <input id="current_lat" name="lat" hidden>
+    <input id="current_lng" name="lng" hidden>
+    <button id="myBtn"  class="mb-xl-1" type="submit" method="post">Use Current Location</button>
+</form>
+<form id="map_location" method="post">
+    <div id="row1">
         <div id="map2"></div>
-        <button class="mb-xl-3" id="map_location" name="map_location">
-            Use Location Selected on Map
-        </button>
-    </form>
-</div>
+    
+        <div id="latlong">
+            <input size="20" type="text" id="latbox" name="lat" hidden>
+            <input size="20" type="text" id="lngbox" name="lng" hidden>
+            <button class="mb-xl-1" type="submit" method="post">Select Location From Map</button>
+        </div>
+    
+    </div>
+</form>
+
 <div id="row2">
     <h1 id="sightings">Sightings</h1>
 <div id="map"></div>
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBboQB2omswdY0o8RQQAcj6ZnbQ6Qz2l14&callback=initMap"></script>
+<cfoutput>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBboQB2omswdY0o8RQQAcj6ZnbQ6Qz2l14&callback=initMap"></script>
+</cfoutput>
 {% endblock %}
