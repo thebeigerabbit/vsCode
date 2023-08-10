@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script src="/static/paddy_sightings.js"></script>
+<div id="row1">
+    <form name="location" method="post">
+        <button class="mb-xl-3" id="current_location" name="current_location">
+            Use Current Location
+        </button>
+        <div id="map2"></div>
+        <button class="mb-xl-3" id="map_location" name="map_location">
+            Use Location Selected on Map
+        </button>
+    </form>
+</div>
+<div id="row2">
+    <h1 id="sightings">Sightings</h1>
+<div id="map"></div>
+</div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBboQB2omswdY0o8RQQAcj6ZnbQ6Qz2l14&callback=initMap"></script>
+{% endblock %}
