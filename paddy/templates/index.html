@@ -1,9 +1,62 @@
 {% extends "layout.html" %}
 
-{% block body %}
-    <div class="row">
-        <div class="col">
-            <h1>why</h1>
+{% block content %}
+    <div class="row bg-primary bg-opacity-50">
+        <style>
+            #hero {
+                background-image: url(/static/images/4CED069E-8D10-4CDF-A669-866F91E4BDD3_1_105_c.jpeg);
+                background-size: cover;
+                height: 600px;
+            }
+        </style>
+        <div id="hero" class="col">
+            <div class="col">
+                <div class="col-3 text-white float-start mt-5">
+                    <header class="display-1 fw-bold">
+                        Paddy
+                    </header>
+                    <p class="display-5">
+                        The small, blue mini...
+                    </p>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="row bg-secondary bg-opacity-25">
+        <div id="bar" class="row bg-primary bg-opacity-50 shadow-sm"></div>
+    </div>
+    <div class="row bg-primary bg-opacity-25">
+        <div class="card-group">
+            <div class="card">
+                <img src="/static/images/pexels-lara-jameson-8828318.jpg" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Sightings</h5>
+                  <p class="card-text">A collection of people who have seen Paddy in her natural habitat, including you if you've ever seen her...</p>
+                  <div class="card-footer mt-5">
+                      <a href="/sightings"><button type="button" class="btn btn-primary">Sightings</button></a>
+                  </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/static/images/07588E0B-2A7B-429A-82AC-26DBCEEA60A9_1_105_c.jpeg" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">History</h5>
+                  <p class="card-text">The story of Paddy from her old owners to my own experiences</p>
+                  <div class="card-footer mt-5">
+                        <a href="/history"><button type="button" class="btn btn-primary">History</button></a>
+                  </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/static/images/pexels-clÃ©ment-proust-14578496.jpg" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Restoration</h5>
+                  <p class="card-text">A detailed overview of what exactly was done to Paddy to get her in the shape she is today</p>
+                  <div class="card-footer mt-5">
+                    <a href="/restoration"><button type="button" class="btn btn-primary">Restoration</button></a>
+                  </div>
+                </div>
+            </div>
+          </div>
     </div>
 {% endblock %}

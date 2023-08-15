@@ -14,11 +14,9 @@
   <div class="row bg-gradient w-100 p-0 mx-auto bg-primary bg-opacity-25">
     <div class="col m-auto">
       <h1>Have You Seen Me?</h1>
-      <form>
+      <form method="post" action="/sightings">
         <input size="20" type="text" id="latbox" name="lat" hidden>
         <input size="20" type="text" id="lngbox" name="lng" hidden>
-      </form>
-      <form>
         <label for="name">Name</label>
         <input type="text" name="name" id="name" autofocus autocomplete="off">
       </form>
@@ -27,7 +25,7 @@
       </div>
       <div class="row">
         <div class="col mb-5 mx-auto">
-          <form>
+          <form method="post" action="/sightings">
             <label for="day">Day:</label>
           <select id="day" name="day">
             <option>1</option>
@@ -65,7 +63,7 @@
           </form>
         </div>
         <div class="col mb-5 mx-auto">
-          <form>
+          <form method="post" action="/sightings">
             <label for="month">Month:</label>
             <select id="month" name="month">
               <option>Jan</option>
@@ -84,7 +82,7 @@
           </form>
         </div>
         <div class="col mb-5 mx-auto">
-            <form>
+            <form method="post" action="/sightings">
               <label for="year">Year:</label>
               <select id="year" name="year">
                 <option>2023</option>
