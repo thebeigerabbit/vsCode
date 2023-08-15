@@ -1,30 +1,8 @@
 #map {
-	width:100%;
-	height:600px;
+    height: 600px;
 }
 
 #map2 {
-    width: 100%;
-    height: 400px;
-    margin-bottom: 15;
+    height: 300px;
 }
 
-#sightings {
-    text-align: center;
-}
-
-#row1 {
-    margin: 0%;
-    padding: 0%;
-    background-color: #ADB7C4;
-}
-
-#row2 {
-    margin: 0%;
-    padding: 0%;
-    background-color: #386EA3;
-}
-
-html {
-    background-color: #1C89BF;
-}

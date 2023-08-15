@@ -2,28 +2,146 @@
 
 {% block content %}
 <script src="/static/paddy_sightings.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<form id="current_location" method="post">
-    <input id="current_lat" name="lat" hidden>
-    <input id="current_lng" name="lng" hidden>
-    <button id="myBtn"  class="mb-xl-1" type="submit" method="post">Use Current Location</button>
-</form>
-<form id="map_location" method="post">
-    <div id="row1">
-        <div id="map2"></div>
-    
-        <div id="latlong">
-            <input size="20" type="text" id="latbox" name="lat" hidden>
-            <input size="20" type="text" id="lngbox" name="lng" hidden>
-            <button class="mb-xl-1" type="submit" method="post">Select Location From Map</button>
-        </div>
-    
+<div class="page-header sticky-top" onLoad="initialize()">
+    <div class="row bg-primary p-0 bg-opacity-75">
+      <div class="col mx-auto my-5 text-white">
+        <h1>Sightings</h1>
+      </div>
     </div>
-</form>
+</div>
 
-<div id="row2">
-    <h1 id="sightings">Sightings</h1>
-<div id="map"></div>
+<div class="container-fluid p-0">
+  <div class="row bg-gradient w-100 p-0 mx-auto bg-primary bg-opacity-25">
+    <div class="col m-auto">
+      <h1>Have You Seen Me?</h1>
+      <form>
+        <input size="20" type="text" id="latbox" name="lat" hidden>
+        <input size="20" type="text" id="lngbox" name="lng" hidden>
+      </form>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" autofocus autocomplete="off">
+      </form>
+      <div class="col my-5 mx-auto">
+        <h3>Date:</h3>
+      </div>
+      <div class="row">
+        <div class="col mb-5 mx-auto">
+          <form>
+            <label for="day">Day:</label>
+          <select id="day" name="day">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+          </select>
+          </form>
+        </div>
+        <div class="col mb-5 mx-auto">
+          <form>
+            <label for="month">Month:</label>
+            <select id="month" name="month">
+              <option>Jan</option>
+              <option>Feb</option>
+              <option>Mar</option>
+              <option>Apr</option>
+              <option>May</option>
+              <option>Jun</option>
+              <option>Jul</option>
+              <option>Aug</option>
+              <option>Sep</option>
+              <option>Oct</option>
+              <option>Nov</option>
+              <option>Dec</option>
+            </select>
+          </form>
+        </div>
+        <div class="col mb-5 mx-auto">
+            <form>
+              <label for="year">Year:</label>
+              <select id="year" name="year">
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+                <option>2029</option>
+                <option>2030</option>
+              </select>
+            </form>
+        </div>
+      </div>
+      <div class="col my-5 mx-auto">
+        <div class="btn btn-primary my-15" type="submit">Submit</div>
+      </div>
+    </div>
+    <div class="col m-auto">
+      <div class="col rounded"  id="map2"></div>
+    </div>
+  </div>
+  <div class="row bg-gradient w-100 p-0 mx-auto bg-secondary bg-opacity-50">
+    <div class="col float-start text-white my-5">
+      <h1>Where I've Been Spotted</h1>
+      <div class="rounded" id="map"></div>
+    </div>
+  </div>
+  <div class="row bg-gradient w-100 p-0 mx-auto bg-primary bg-opacity-50">
+    <div class="col my-5">
+      <h1 class="text-white">Spotters</h1>
+      <table class="table table-hover table-responsive">
+        <thead class="table-primary">
+          <td class="col">Name</td>
+          <td class="col">Lattitude</td>
+          <td class="col">Longitude</td>
+          <td class="col">Day</td>
+          <td class="col">Month</td>
+          <td class="col">Year</td>
+        </thead>
+        <tbody table-striped>
+
+          {% for d in db %}
+          <tr>
+            <td>{{ db.name }}</td>
+            <td>{{ db.lat }}</td>
+            <td>{{ db.lng }}</td>
+            <td>{{ db.day }}</td>
+            <td>{{ db.month }}</td>
+            <td>{{ db.year }}</td>
+          </tr>
+        {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <cfoutput>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBboQB2omswdY0o8RQQAcj6ZnbQ6Qz2l14&callback=initMap"></script>
