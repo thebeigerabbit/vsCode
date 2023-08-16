@@ -31,12 +31,6 @@ session = Session()
 
 app=Flask(__name__)
 
-#def object_as_dict(obj):
-    #return {c.key: getattr(obj, c.key)
-            #for c in inspect(obj).mapper.column_attrs}
-
-
-
 @app.route("/sightings", methods=["POST", "GET"])
 def sightings():
     if request.method == "GET":
