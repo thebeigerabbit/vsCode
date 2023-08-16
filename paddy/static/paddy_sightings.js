@@ -1,20 +1,4 @@
 
-function initMap(lat, lng) {
-    var location = {lat: -33.981223,lng: 18.485443}
-    var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: location
-    });
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-
-
-}
-
-
-
 // global "map" variable
 var map2 = null;
 var marker = null;
@@ -34,11 +18,6 @@ function createMarker(latlng, name, html) {
         map: map2,
         });
 
-    //google.maps.event.addListener(marker, 'click', function() {
-        //infowindow.setContent(contentString); 
-        //infowindow.open(map,marker);
-       // });
-
     google.maps.event.trigger(marker, 'click');    
     return marker;
 
@@ -47,11 +26,11 @@ function createMarker(latlng, name, html) {
 function initialize() {
 
     // the location of the initial pin
-    var myLatlng = new google.maps.LatLng(-33.930266, 18.418581);
+    var myLatlng = new google.maps.LatLng(-34.026494, 18.434491);
 
     // create the map
     var myOptions = {
-        zoom: 10,
+        zoom: 11,
         center: myLatlng,
         mapTypeControl: true,
         mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
